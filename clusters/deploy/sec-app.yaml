@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sec-app
+  # type: kubernetes.io/basic-auth
+stringData:
+  DB_PASSWORD: secret 
