@@ -8,7 +8,7 @@ spec:
     name: repo-app
   filterTags:
     extract: $ts
-    pattern: ^master-[a-f0-9]+-(?P<ts>[0-9]+)
+    pattern: ^main-[a-f0-9]+-(?P<ts>[0-9]+)
   policy:
     numerical:
       order: asc
