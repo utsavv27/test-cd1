@@ -16,7 +16,7 @@ spec:
 
       containers:
       - name: gymie
-        image: utsav0077/pro1:latest
+        image: utsav0077/pro1:latest 
         ports:
         - containerPort: 8000
           name: app-port

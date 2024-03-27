@@ -1,0 +1,14 @@
+apiVersion:  image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: img-policy 
+  namespace: test
+spec:
+  imageRepositoryRef:
+    name: repo-app
+  filterTags:
+    extract: $ts
+    pattern: ^master-[a-f0-9]+-(?P<ts>[0-9]+)
+  policy:
+    numerical:
+      order: asc
