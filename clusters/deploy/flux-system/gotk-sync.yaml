@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/utsavv27/test-cd1.git
+  url: ssh://git@github.com/utsavv27/test-cd1
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
