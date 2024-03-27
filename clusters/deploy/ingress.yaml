@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: defalut-ing
+  namespace: test
+  labels:
+    name: myapp-app
+spec:
+  rules:
+    - host: gymie.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-app
+                port:
+                  number: 9001
