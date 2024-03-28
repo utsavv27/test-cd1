@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: helm-repo
-  namespace: test
+  namespace: helm1
 spec:
   interval: 1m
   url: https://improwised.github.io/charts
