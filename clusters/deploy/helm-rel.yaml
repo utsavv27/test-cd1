@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: poly
+      chart: polymorphic-app
       sourceRef:
         kind: HelmRepository
         name: helm-repo
