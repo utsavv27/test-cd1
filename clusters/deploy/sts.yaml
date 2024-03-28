@@ -49,11 +49,11 @@ spec:
             #       key: MYSQL_ROOT_PASSWORD
 
 
-            # - name: MYSQL_PASSOWRD
-            #   value: secret 
+            - name: MYSQL_ROOT_PASSOWRD
+              value: "123456"
            
-            - name: MYSQL_ALLOW_EMPTY_PASSWORD
-              value: "yes"
+            # - name: MYSQL_ALLOW_EMPTY_PASSWORD
+            #   value: "yes"
           # args: ['--default-authentication-plugin=mysql_native_password']
           volumeMounts:
             - mountPath: /var/lib/mysql/
