@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gymie
-        image: docker.io/utsav0077/test-ci:main-9135fb1-1711616312 # { "$imagepolicy":"test:app" }
+        image: docker.io/utsav0077/test-ci:main-5a776d1-1711616537 # { "$imagepolicy":"test:app" }
         ports:
         - containerPort: 8000
           name: app-port
