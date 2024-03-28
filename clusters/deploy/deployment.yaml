@@ -11,51 +11,44 @@ spec:
   template:
     metadata:
       labels:
-        app: myapp-app  
+        app: myapp-app
     spec:
-
       containers:
       - name: gymie
-        image: utsav0077/project:1.0  # { "$imagepolicy":"test:app" }
+        image: docker.io/utsav0077/test-ci:main-7e5021b-1710857008 # { "$imagepolicy":"test:app" }
         ports:
         - containerPort: 8000
           name: app-port
         env:
-
-          - name: DB_CONNECTION
-            valueFrom:
-                configMapKeyRef:
-                    name: con-app
-                    key: DB_CONNECTION
-
-          - name: DB_HOST
-            valueFrom:
-                configMapKeyRef:
-                    name: con-app
-                    key: DB_HOST
-
-          - name: DB_PORT
-            valueFrom:
-                configMapKeyRef:
-                    name: con-app
-                    key: PORT
-
-          - name: DB_DATABASE
-            valueFrom:
-                configMapKeyRef:
-                    name: con-app
-                    key: DB-US
-
-          - name: DB_USERNAME
-            valueFrom:
-                configMapKeyRef:
-                    name: con-app
-                    key: DB-US
-
-          # - name: DB_PASSWORD
-          #   valueFrom:
-          #       secretKeyRef:
-          #           name: sec-app
-          #           key: DB_PASSWORD
-          - name: DB_PASSWORD
-            value: secret
+        - name: DB_CONNECTION
+          valueFrom:
+            configMapKeyRef:
+              name: con-app
+              key: DB_CONNECTION
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: con-app
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: con-app
+              key: PORT
+        - name: DB_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: con-app
+              key: DB-US
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: con-app
+              key: DB-US
+        # - name: DB_PASSWORD
+        #   valueFrom:
+        #       secretKeyRef:
+        #           name: sec-app
+        #           key: DB_PASSWORD
+        - name: DB_PASSWORD
+          value: secret
