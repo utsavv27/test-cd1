@@ -5,4 +5,4 @@ metadata:
   namespace: test
 stringData:
   MYSQL_PASSWORD: secret   
-  MYSQL_ROOT_PASSWORD : "123456"
+  MYSQL_ROOT_PASSWORD : "abcd"
