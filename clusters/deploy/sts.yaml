@@ -42,15 +42,15 @@ spec:
                   name: sec-db
                   key: MYSQL_PASSWORD
                   
-            # - name: MYSQL_ROOT_PASSWORD
-            #   valueFrom:
-            #     secretKeyRef:
-            #       name: sec-db
-            #       key: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sec-db
+                  key: MYSQL_ROOT_PASSWORD
 
 
-            - name: MYSQL_ROOT_PASSOWRD
-              value: "123456"
+            # - name: MYSQL_ROOT_PASSOWRD
+            #   value: "123456"
            
             # - name: MYSQL_ALLOW_EMPTY_PASSWORD
             #   value: "yes"
