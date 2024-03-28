@@ -16,7 +16,7 @@ spec:
 
       containers:
       - name: gymie
-        image: utsav0077/project:1.0  # { "$imagepolicy":"flux-system:"
+        image: utsav0077/project:1.0  # { "$imagepolicy":"test:app" }
         ports:
         - containerPort: 8000
           name: app-port
