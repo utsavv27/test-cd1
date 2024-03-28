@@ -23,8 +23,8 @@ spec:
   interval: 30m
   sourceRef:
     kind: GitRepository
-    name: app
-    namespace: test
+    name: flux-system
+    namespace: flux-system
   git:
     checkout:
       ref:
