@@ -17,14 +17,14 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
-  name: app
-  namespace: test
+  name: flux-system
+  namespace: flux-system
 spec:
   interval: 30m
   sourceRef:
     kind: GitRepository
-    name: flux-system
-  namespace: flux-system
+    name: app
+    namespace: test
   git:
     checkout:
       ref:
