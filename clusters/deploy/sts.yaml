@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: myapp-db
+  serviceName: svc-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myapp-db
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.3.0
+          ports:
+            - containerPort: 3306
+              name: myapp-db
+          env:
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: con-app
+                  key: DB-US
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: con-app
+                  key: DB-US
+            - name: MYSQL_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: con-app
+                  key: PORT
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sec-db
+                  key: MYSQL_PASSWORD
+                  
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sec-db
+                  key: MYSQL_ROOT_PASSWORD
+
+
+            # - name: MYSQL_ROOT_PASSOWRD
+            #   value: "123456"
+           
+            # - name: MYSQL_ALLOW_EMPTY_PASSWORD
+            #   value: "yes"
+          args: ['--default-authentication-plugin=mysql_native_password']
+          volumeMounts:
+            - mountPath: /var/lib/mysql/
+              name: db-vol
+      volumes:
+        - name: db-vol
+          persistentVolumeClaim:
+            claimName: my-pvc

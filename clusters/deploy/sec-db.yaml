@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sec-db
+  namespace: test
+stringData:
+  MYSQL_PASSWORD: secret   
+  MYSQL_ROOT_PASSWORD : "abcd"
