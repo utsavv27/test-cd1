@@ -19,6 +19,11 @@ spec:
         ports:
         - containerPort: 8000
           name: app-port
+      - name: gymie
+        image: docker.io/utsav0077/test-ci:main-5a776d1-1711616537 # { "$imagepolicy":"test:app" }
+        ports:
+        - containerPort: 8000
+          name: app-port1
         env:
         - name: DB_CONNECTION
           valueFrom:
