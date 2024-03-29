@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: sec-app
-  namespace: test
-spec:
-  # type: kubernetes.io/basic-auth
-stringData:
-  DB_PASSWORD: secret 
