@@ -8,7 +8,7 @@ spec:
     matchLabels:
       app: myapp-app
   replicas: 1
-  template:
+  template: 
     metadata:
       labels:
         app: myapp-app

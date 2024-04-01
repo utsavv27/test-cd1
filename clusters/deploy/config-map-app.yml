@@ -8,5 +8,6 @@ data:
       DB_HOST: svc-db 
       PORT: "3306"
       DB-US: homestead
+      APP_ENV: development
 
      
