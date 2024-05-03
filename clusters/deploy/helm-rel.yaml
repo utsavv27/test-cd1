@@ -13,7 +13,7 @@ spec:
         name: helm-repo
         namespace: helm1
       # valuesFiles:
-         
+    
   values:
      # Default values for polymorphic-app.
        # This is a YAML-formatted file.
@@ -140,7 +140,7 @@ spec:
                - name: DB_CONNECTION 
                  value: mysql
                - name: DB_HOST
-                 value:  poly-rel-mysql-svc 
+                 value:  poly-rel-mysql-svc   
                - name: DB_PORT 
                  value: "3306"
                - name: DB_DATABASE 
